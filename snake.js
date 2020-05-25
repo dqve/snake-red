@@ -29,11 +29,11 @@ var snake, wPressed = false, dPressed = false, sPressed = false, aPressed = fals
 
     if(snake.eat(fruit)){
       fruit.pickLocation();
-       //Hver gang den if statement er sand, så ændres lokalitionen for æblet.
+       //Each time the if statement is true, the location of the apple changes.
     }
   }, 250);
 }());
-//Dette er "tegnefunktionen", den bliver kaldt med det samme, hvorfor selve funktionen er sat i paranteser med det samme. For nu tegner den vores snake. Samtidig bliver snake updateret hvert 250 milisekund, eller 4 gange pr. sekund.
+//This is the "drawing function", it is called immediately, which is why the function itself is put in parentheses immediately. For now, it draws our snake. At the same time, the snake is updated every 250 milliseconds, or 4 times per second. second.
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
