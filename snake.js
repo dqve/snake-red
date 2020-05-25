@@ -4,23 +4,22 @@ const ctx = canvas.getContext("2d");
 const scale = 10;
 const rows = canvas.height / scale; 
 const columns = canvas.width / scale; 
-//de tre konstanter bruges til at lave de små firkanter, de er 10 px i størrelse, er hvad scale gør. 
+//the three constants used to make the small squares, they are 10 px in size, is what scale does.
 
 var snake, wPressed = false, dPressed = false, sPressed = false, aPressed = false;
-//Mine variabler 
+//My variables
 
 (function setup(){
   snake = new snake();
   fruit = new fruit();
-  /*Note, når der bruges denne "new" operator sker 3 ting
-  1. Den laver et tomt objekt eksempelvis -> const x = {};
-  2. Den vil sætte statmenten this til det objekt 
-  3. Sidst sker der det, at den lave en return statement for den function. 
-  Så, vi har altså functionen snake, som er defineret længere nede, her bruges der nøgleordet this. Så vi får altså dette nye objekt, og sætter så functionen snake, til at pege mod det objekt. ********* */
+  /*Note when using this "new" operator 3 things happen
+  1. It creates an empty object for example -> const x = {};
+  2. It will set the statement this to that object
+  3. Lastly, it happens that they make a return statement for that function.
+  So, we have the function snake, which is defined further down, here the keyword this is used. So we get this new object, and then set the function snake to point to that object. ********* */
 
   fruit.pickLocation();
-  //hvis jeg ikke skulle skrive <i>en masse tekst</i>, ville jeg have plaveret den lige under fruit = new fruit();, men det virker mere bøvlet. Overordnet set, sørger denne for, at der bliver valgt en lokalition, udfra pickLocation, som du vil se er udarbejdet til at være tilfældig, ved starten.
- 
+  //if I didn't have to write <i> a lot of text </i>, I would have paved it just below fruit = new fruit (); but it seems more hassle. In general, this makes sure that a location is selected based on pickLocation, which you will see is prepared at random, at the start.
 
   window.setInterval(() =>{
     ctx.clearRect(0,0, canvas.width, canvas.height);
